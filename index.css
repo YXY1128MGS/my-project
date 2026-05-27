@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+html {
+    scrollbar-gutter: stable;
+}
+
+/* =========================================
+   基础重置
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    /* 使用单独导出的纯净背景图，而不是带有假按钮的整图 */
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden; /* 彻底杜绝横向滚动条 */
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================================
+   1. 导航栏 (Logo居左，导航居右)
+   ========================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* 核心：两端对齐 */
+    align-items: center;
+    padding: 15px 5%; 
+    width: 100%;
+    max-width: 1440px; /* 限制最大宽度，防止在大带鱼屏上散得太开 */
+    margin: 0 auto;
+    z-index: 9999;
+}
+
+/* 左侧 Logo 两行字对齐 */
+.logo {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 靠左对齐 */
+}
+
+.logo-large {
+    color: #fff;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.logo-small {
+    color: #aaaaaa;
+    font-size: 14px;
+    margin-top: -5px;
+    letter-spacing: 1px;
+}
+
+/* 右侧导航标签 */
+.nav-links {
+    display: flex;
+    gap: 100px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #888;
+    font-size: 20px;
+    font-weight: 400;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+    color: #fff;
+    font-weight: 700;
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    background-color: #66CB33;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* =========================================
+   2. 主体内容 (左侧三行字+按钮，右侧摩托车)
+   ========================================= */
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1; /* 自动撑满导航栏下方的剩余高度 */
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+/* --- 左侧文字区域 --- */
+.hero-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+    margin-top: -80px; /* 【新增】利用负边距让整个文字+按钮模块往上提 */
+}
+
+.title-green {
+    color: #66CB33;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    font-style: italic; /* 【新增】变斜体 */
+}
+
+.title-white {
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-style: italic; /* 【新增】变斜体 */
+}
+
+.title-small {
+    color: #aaaaaa;
+    font-size: 20px;
+    line-height: 1.6;
+    max-width: 450px;
+    margin-bottom: 150px;
+}
+
+/* --- 你的酷炫按钮 --- */
+.cta-button {
+    width: 400px;
+    height: 80px;
+    background-image: url('btn-bg.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center; /* 按钮文字和箭头居中 */
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    margin-top: 50px;
+}
+
+.btn-text {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.btn-arrow {
+    height: 20px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.02); /* 悬停微动放大 */
+}
+
+
+
+/* --- 右侧摩托车区域 --- */
+.hero-image {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* 强行推到最右侧 */
+    justify-content: center;
+    position: relative;
+    transform: translateX(8%); /* 【新增】强行让摩托车整体往右平移，拉开左侧空间 */
+    margin-top: 180px;
+}
+.moto-img {
+    width: 105%;
+    max-width: 800px;
+    z-index: 2;
+    
+}
+
+.shadow-img {
+    width: 105%;
+    max-width: 700px;
+    margin-top: -110px;
+    opacity: 0.8;
+    
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes shadow-breath {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(0.95); opacity: 0.5; }
+}
+
+/* =========================================
+   3. 响应式布局 (我的自由发挥部分)
+   ========================================= */
+
+/* 平板尺寸 (窄屏笔记本/iPad) */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 18px 5%;
+    }
+
+    .logo-large {
+        font-size: 22px;
+    }
+
+    .logo-small {
+        font-size: 12px;
+    }
+
+    .nav-links {
+        gap: 48px;
+    }
+
+    .nav-links a {
+        font-size: 17px;
+    }
+
+    .title-green { font-size: 48px; }
+    .title-white { font-size: 40px; }
+    .cta-button { transform: scale(0.85); transform-origin: left center; }
+    .cta-button:hover { transform: scale(0.88); }
+    .moto-img { max-width: 600px; }
+    .shadow-img { max-width: 500px; }
+}
+
+/* 手机尺寸 (垂直堆叠) */
+@media (max-width: 768px) {
+    body {
+        height: auto; /* 解除高度封印，允许手机上下滑动 */
+        overflow-y: auto; 
+        background-position: 70% center;
+    }
+
+    /* 导航栏变为上下排列 */
+    .navbar {
+        flex-direction: column;
+        gap: 18px;
+        padding: 36px 5%;
+    }
+
+    .logo { align-items: center; text-align: center; }
+    .nav-links { gap: 20px; }
+    .nav-links a {
+        font-size: 14px; /* 【新增】手机端字体稍微改小一点，显得更精致 */
+    }
+
+    /* 主体内容变为上下堆叠 */
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+
+    .hero-text {
+        align-items: center; /* 让左侧文字在手机上全部居中 */
+        margin-bottom: 40px;
+    }
+
+    .title-green { font-size: 32px; }
+    .title-white { font-size: 32px; }
+    .title-small { font-size: 16px;max-width: 100%; margin-bottom: 30px; }
+
+    /* 按钮居中缩放 */
+    .cta-button { transform: scale(0.8); transform-origin: center center; }
+    .cta-button:hover { transform: scale(0.82); }
+
+    /* 摩托车乖乖呆在文字下方并居中 */
+    .hero-image {
+        transform: translateX(0); /* 【新增】把电脑端的向右偏移归零 */
+        align-items: center; /* 【确保】让内部的图片完全居中 */
+        width: 90%;
+        margin-top: 10px; 
+    }
+    .shadow-img {
+        transform: translateX(0); /* 【新增】把电脑端的向右偏移归零 */
+        align-items: center; /* 【确保】让内部的图片完全居中 */
+        margin-top: -50px; /* 把原来电脑端的 -30px 改小，防止过度重叠 */
+        width: 90%; /* 稍微拉宽一点，让它在小屏幕上更明显 */
+    }
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>制作プロセス | Realistic Illustration</title>
+    <link rel="stylesheet" href="process.css">
+</head>
+
+<body>
+    <header class="navbar-shell">
+        <div class="navbar">
+            <a href="index.html" class="logo">
+                <span class="logo-large">Realistic Art</span>
+                <span class="logo-small">2026 Web Design Project</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">ホーム</a>
+                <a href="process.html" class="active">制作プロセス</a>
+                <a href="works.html">作品展示</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="process-page">
+        <section class="process-step">
+            <div class="step-visual" id="step01">
+                <img src="process-step01.png" alt="Step 01 path drawing">
+                <nav class="process-step-nav" aria-label="ステップ 01">
+                    <a href="#step01" class="active"><span>01</span><i></i></a>
+                    <a href="#step02"><span>02</span><i></i></a>
+                    <a href="#step03"><span>03</span><i></i></a>
+                    <a href="#step04"><span>04</span><i></i></a>
+                </nav>
+            </div>
+            <p class="step-caption">
+                写真をベースに、ペンツールを用いて各パーツの輪郭を正確にトレースします。
+                輪郭やパーツの境界線を丁寧に描き分け、後工程の基礎となる線画を構築します。
+            </p>
+        </section>
+
+        <section class="process-step">
+            <div class="step-visual" id="step02">
+                <img src="process-step02.png" alt="Step 02 base color">
+                <nav class="process-step-nav" aria-label="ステップ 02">
+                    <a href="#step01"><span>01</span><i></i></a>
+                    <a href="#step02" class="active"><span>02</span><i></i></a>
+                    <a href="#step03"><span>03</span><i></i></a>
+                    <a href="#step04"><span>04</span><i></i></a>
+                </nav>
+            </div>
+            <p class="step-caption">
+                線画をもとに、各パーツへ基本となる色を配置します。
+                素材ごとの色味や質感を意識しながら全体のバランスを整え、立体感を生み出すための土台を描いていきます。
+            </p>
+        </section>
+
+        <section class="process-step detail-step">
+            <div class="step-visual step03-visual" id="step03">
+                <img src="process-step03.png" alt="Step 03 detail background">
+                <nav class="process-step-nav" aria-label="ステップ 03">
+                    <a href="#step01"><span>01</span><i></i></a>
+                    <a href="#step02"><span>02</span><i></i></a>
+                    <a href="#step03" class="active"><span>03</span><i></i></a>
+                    <a href="#step04"><span>04</span><i></i></a>
+                </nav>
+
+                <div class="step03-cards" aria-label="ディテール画像">
+                    <button type="button" class="detail-card">
+                        <img src="step03-card01.png" alt="ディテール 1">
+                    </button>
+                    <button type="button" class="detail-card">
+                        <img src="step03-card02.png" alt="ディテール 2">
+                    </button>
+                    <button type="button" class="detail-card">
+                        <img src="step03-card03.png" alt="ディテール 3">
+                    </button>
+                    <button type="button" class="detail-card">
+                        <img src="step03-card04.png" alt="ディテール 4">
+                    </button>
+                </div>
+            </div>
+
+            <div class="decomposition-title">
+                <h2>Decomposition</h2>
+                <p>パーツ分解</p>
+            </div>
+
+            <div class="step-visual decomposition-visual">
+                <img src="process-step03-1.png" alt="Motorcycle decomposition">
+                <nav class="process-step-nav" aria-label="ステップ 03">
+                    <a href="#step01"><span>01</span><i></i></a>
+                    <a href="#step02"><span>02</span><i></i></a>
+                    <a href="#step03" class="active"><span>03</span><i></i></a>
+                    <a href="#step04"><span>04</span><i></i></a>
+                </nav>
+            </div>
+            <p class="step-caption">
+                ベースカラーをもとに、光や影、素材感などの細部表現を加えていきます。
+                金属や樹脂、タイヤなど各素材の質感を描き分けることで、写実的な立体感と完成度を高めています。
+            </p>
+        </section>
+
+        <section class="process-step finish-step">
+            <div class="step-visual" id="step04">
+                <img src="process-step04.png" alt="Finished motorcycle illustration">
+            </div>
+        </section>
+    </main>
+
+    <div class="image-lightbox" aria-hidden="true">
+        <button type="button" class="lightbox-close" aria-label="閉じる">×</button>
+        <img src="" alt="">
+    </div>
+
+    <script src="process.js"></script>
+</body>
+</html>
