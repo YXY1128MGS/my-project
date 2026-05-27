@@ -207,10 +207,11 @@ body {
 }
 
 .shadow-img {
-    width: 105%;
-    max-width: 700px;
-    margin-top: -110px;
+    width: 120%;
+    max-width: 840px;
+    margin-top: -115px;
     opacity: 0.8;
+    transform: translateX(7%);
     
 }
 
@@ -255,7 +256,7 @@ body {
     .cta-button { transform: scale(0.85); transform-origin: left center; }
     .cta-button:hover { transform: scale(0.88); }
     .moto-img { max-width: 600px; }
-    .shadow-img { max-width: 500px; }
+    .shadow-img { max-width: 630px; }
 }
 
 /* 手机尺寸 (垂直堆叠) */
@@ -311,6 +312,6 @@ body {
         transform: translateX(0); /* 【新增】把电脑端的向右偏移归零 */
         align-items: center; /* 【确保】让内部的图片完全居中 */
         margin-top: -50px; /* 把原来电脑端的 -30px 改小，防止过度重叠 */
-        width: 90%; /* 稍微拉宽一点，让它在小屏幕上更明显 */
+        width: 98%; /* 稍微拉宽一点，让它在小屏幕上更明显 */
     }
 }
